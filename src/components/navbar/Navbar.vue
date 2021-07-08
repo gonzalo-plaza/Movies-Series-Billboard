@@ -57,25 +57,25 @@ export default class Navbar extends Vue {
   }
 
   &__item {
-    font-size: 15px;
+    font-size: 0.938rem;
   }
   &__img {
-    height: 22px;
+    height: 1.375rem;
   }
 
   &__language {
     ::v-deep .vs-navbar__group__item {
-      font-size: 15px;
+      font-size: 0.938rem;
       display: flex;
       align-items: center;
     }
     ::v-deep .vs-navbar__group__items {
       min-width: auto;
-      left: 29px;
+      left: 1.813rem;
     }
 
     &__icon {
-      margin: 0px 2px 0px 2px;
+      margin: 0rem 0.125rem 0rem 0.125rem;
     }
   }
 }
