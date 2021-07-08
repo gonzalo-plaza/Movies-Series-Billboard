@@ -1,20 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <navbar />
+    <img class="test-img" src="@/assets/img/imagen-test.png" />
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
+import Navbar from "@/components/navbar/Navbar.vue";
+
+@Component({
+  name: "App",
+  components: { Navbar },
+})
+export default class App extends Vue {}
+</script>
+
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Cabin", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.test-img {
+  width: 100%;
 }
 
 #nav {

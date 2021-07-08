@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Cabin";
+  src: url("../assets/fonts/cabin-font/Cabin-Regular.eot");
+  src: url("../assets/fonts/cabin-font/Cabin-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/cabin-font/Cabin-Regular.ttf") format("truetype"),
+    url("../assets/fonts/cabin-font/Cabin-Regular.woff2") format("woff"),
+    url("../assets/fonts/cabin-font/Cabin-Regular.svg#Cabin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../assets/fonts/cabin-font/Cabin-Medium.eot");
+  src: url("../assets/fonts/cabin-font/Cabin-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/cabin-font/Cabin-Medium.ttf") format("truetype"),
+    url("../assets/fonts/cabin-font/Cabin-Medium.woff2") format("woff"),
+    url("../assets/fonts/cabin-font/Cabin-Medium.svg#Cabin") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../assets/fonts/cabin-font/Cabin-SemiBold.eot");
+  src: url("../assets/fonts/cabin-font/Cabin-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/cabin-font/Cabin-SemiBold.ttf") format("truetype"),
+    url("../assets/fonts/cabin-font/Cabin-SemiBold.woff2") format("woff"),
+    url("../assets/fonts/cabin-font/Cabin-SemiBold.svg#Cabin") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../assets/fonts/cabin-font/Cabin-Bold.eot");
+  src: url("../assets/fonts/cabin-font/Cabin-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/cabin-font/Cabin-Bold.ttf") format("truetype"),
+    url("../assets/fonts/cabin-font/Cabin-Bold.woff2") format("woff"),
+    url("../assets/fonts/cabin-font/Cabin-Bold.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
