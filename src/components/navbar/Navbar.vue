@@ -34,8 +34,10 @@
     </vs-navbar>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+
+import mainStore from "@/store/main-store/MainStore";
 
 @Component({
   name: "Navbar",
@@ -44,6 +46,12 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Navbar extends Vue {
   active = "Home";
   value = "1";
+
+  private mainStore = mainStore.context(this.$store);
+
+  private get currentLanguaje(): string {
+    return this.mainStore.state.currentLanguaje;
+  }
 }
 </script>
 

@@ -6,7 +6,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
+
+import mainStore from "@/store/main-store/MainStore";
 
 import Navbar from "@/components/navbar/Navbar.vue";
 
@@ -14,7 +16,18 @@ import Navbar from "@/components/navbar/Navbar.vue";
   name: "App",
   components: { Navbar },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private mainStore = mainStore.context(this.$store);
+
+  private get currentLanguaje(): string {
+    return this.mainStore.state.currentLanguaje;
+  }
+
+  @Watch("currentLanguage")
+  private onChangeLanguaje(): void {
+    this.$i18n.locale = this.currentLanguaje;
+  }
+}
 </script>
 
 <style lang="scss">
