@@ -19,13 +19,13 @@ import Navbar from "@/components/navbar/Navbar.vue";
 export default class App extends Vue {
   private mainStore = mainStore.context(this.$store);
 
-  private get currentLanguaje(): string {
-    return this.mainStore.state.currentLanguaje;
+  private get currentLanguage(): string {
+    return this.mainStore.state.currentLanguage;
   }
 
   @Watch("currentLanguage")
-  private onChangeLanguaje(): void {
-    this.$i18n.locale = this.currentLanguaje;
+  private onChangeLanguage(): void {
+    this.$i18n.locale = this.currentLanguage;
   }
 }
 </script>

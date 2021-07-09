@@ -2,11 +2,11 @@ import { Mutations } from "vuex-smart-module";
 import MainState from "./MainState";
 
 export default class MainMutations extends Mutations<MainState> {
-  public changeLanguajeToSpanish(): void {
-    this.state.currentLanguaje = "es";
+  public changeLanguageToSpanish(): void {
+    this.state.currentLanguage = "es";
   }
 
-  public changeLanguajeToEnglish(): void {
-    this.state.currentLanguaje = "en";
+  public changeLanguageToEnglish(): void {
+    this.state.currentLanguage = "en";
   }
 }
