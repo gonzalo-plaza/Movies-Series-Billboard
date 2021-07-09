@@ -5,37 +5,49 @@
         <img class="navbar__img" src="@/assets/logo.png" />
       </template>
       <vs-navbar-item class="navbar__item" :active="active == 'Home'" id="Home">
-        Inicio
+        {{ $t("components.navbar.home") }}
       </vs-navbar-item>
       <vs-navbar-item
         class="navbar__item"
         :active="active == 'Films'"
         id="Films"
       >
-        Películas
+        {{ $t("components.navbar.films") }}
       </vs-navbar-item>
       <vs-navbar-item
         class="navbar__item"
         :active="active == 'Series'"
         id="Series"
       >
-        Series
+        {{ $t("components.navbar.series") }}
       </vs-navbar-item>
       <template #right>
         <vs-navbar-group class="navbar__language">
           <span class="material-icons navbar__language__icon"> public </span>
-          <span>Language</span>
+          <span>{{ $t("components.navbar.languageTitle") }}</span>
           <template #items>
-            <vs-navbar-item> English </vs-navbar-item>
-            <vs-navbar-item> Spanish </vs-navbar-item>
+            <vs-navbar-item
+              v-if="currentLanguage == 'es'"
+              @click="changeLanguageToEnglish"
+            >
+              {{ $t("components.navbar.english") }}
+            </vs-navbar-item>
+            <vs-navbar-item
+              v-if="currentLanguage == 'en'"
+              @click="changeLanguageToSpanish"
+            >
+              {{ $t("components.navbar.spanish") }}
+            </vs-navbar-item>
           </template>
         </vs-navbar-group>
       </template>
     </vs-navbar>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+
+import mainStore from "@/store/main-store/MainStore";
 
 @Component({
   name: "Navbar",
@@ -44,6 +56,26 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Navbar extends Vue {
   active = "Home";
   value = "1";
+
+  private mainStore = mainStore.context(this.$store);
+
+  private get currentLanguage(): string {
+    return this.mainStore.state.currentLanguage;
+  }
+
+  private changeLanguage(): void {
+    this.mainStore.state.currentLanguage == "es"
+      ? (this.mainStore.state.currentLanguage = "en")
+      : (this.mainStore.state.currentLanguage = "es");
+  }
+
+  private changeLanguageToSpanish(): void {
+    this.mainStore.state.currentLanguage = "es";
+  }
+
+  private changeLanguageToEnglish(): void {
+    this.mainStore.state.currentLanguage = "en";
+  }
 }
 </script>
 
@@ -71,7 +103,7 @@ export default class Navbar extends Vue {
     }
     ::v-deep .vs-navbar__group__items {
       min-width: auto;
-      left: 1.813rem;
+      left: 1.5rem;
     }
 
     &__icon {
